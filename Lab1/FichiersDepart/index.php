@@ -30,6 +30,13 @@ if (isset($_REQUEST['action'])) {
             echo 'Erreur : aucun identifiant de produit envoyé';
         }
     } 
+
+    elseif ($_REQUEST['action'] == 'categories'){
+        if (isset($_REQUEST['id']) && $_REQUEST['id'] > 0 ){
+            require('controller/controllerCategorie.php');
+            listCategories();
+        }
+    }
 }
 // Si pas de paramètre charge l'accueil
 else {
